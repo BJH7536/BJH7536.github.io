@@ -1,5 +1,5 @@
 ---
-title:  유니티 C# 코루틴
+title:  Unity C# Coroutine
 date:   2024-02-05 +0900
 categories: [C# 문법]
 tags: [C# 문법]
@@ -31,9 +31,9 @@ mermaid: true
         - 특별한 경우가 아니라면, *`methodName`*을 `string`으로 받는 버전이 아닌, <br> *`IEnumerator`*를 매개변수로 받는 버전을 사용할 것을 권장.
         - **가비지 Garbage**를 생성시킨다.
 - `StopCoroutine()` : 코루틴 종료 메서드
-    - `*void StopCoroutine(string methodName)*`
-    - `*void StopCoroutine(IEnumerator routine)*`
-    - `*void StopCoroutine(Coroutine routine)` - 권장*
+    - *`void StopCoroutine(string methodName)`*
+    - *`void StopCoroutine(IEnumerator routine)`*
+    - *`void StopCoroutine(Coroutine routine)` - 권장*
     - 가급적이면 종료하고자 하는 코루틴을 정확하게 식별하기 위해, <br>
 	    다음과 같은 방식으로 사용하는 것을 권장.
     ```csharp

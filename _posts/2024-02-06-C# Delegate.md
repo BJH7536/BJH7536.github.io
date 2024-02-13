@@ -1,8 +1,8 @@
 ---
-title:  유니티 C# 델리게이트 Delegate
+title:  Unity C# Delegate
 date:   2024-02-06 +0900
-categories: [C# 문법]
-tags: [C# 문법]
+categories: [C# 문법, Unity]
+tags: [C# 문법, Unity]
 math: true
 mermaid: true
 ---
