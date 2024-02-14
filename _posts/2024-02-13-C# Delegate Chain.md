@@ -1,7 +1,7 @@
 ---
 title:  Unity C# Delegate Chain
 date:   2024-02-13 +0900
-categories: [C# 문법, Unity]
+categories: [C# 문법]
 tags: [C# 문법, Unity]
 math: true
 mermaid: true
