@@ -17,11 +17,11 @@ mermaid: true
 ```csharp
 namespace System
 {
-		public delegate void EventHandler(object sender, EventArgs e);
+    public delegate void EventHandler(object sender, EventArgs e);
 
-		// 혹은 
-		public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e);
-		// 사용 예제2에서 사용
+    // 혹은 
+    public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e);
+    // 사용 예제2에서 사용
 }
 ```
 
@@ -58,7 +58,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         EventTest1 eventTest = new EventTest1("this is test");
-				// 보내고자 하는 정보를 담아서 
+                // 보내고자 하는 정보를 담아서 
 
         eventHandler += Test;
         eventHandler.Invoke(this, eventTest);    // 보낸다
@@ -76,7 +76,7 @@ public class NewBehaviourScript : MonoBehaviour
 ```csharp
 namespace System
 {
-		public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e);
+    public delegate void EventHandler<TEventArgs>(object sender, TEventArgs e);
 }
 ```
 
@@ -105,7 +105,7 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         EventTest1 eventTest = new EventTest1("this is test");
-				// 보내고자 하는 정보를 담아서 
+                // 보내고자 하는 정보를 담아서 
 
         eventHandler += Test;
         eventHandler.Invoke(this, eventTest);    // 보낸다

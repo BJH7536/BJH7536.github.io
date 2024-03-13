@@ -27,7 +27,7 @@ mermaid: true
     
 4. **Delegate Chain 지원** <br>
     C#의 `delegate`는 하나 이상의 메소드를 참조할 수 있는 기능을 제공. 이를 통해 여러 메소드를 동시에 호출할 수 있으며, 이는 이벤트 핸들링이나 콜백 메커니즘 구현에 매우 유용.
-		
+        
 1. **익명 메소드 및 람다 표현식과의 연동** <br>
     `delegate`는 익명 메소드나 람다 표현식과 연동되어 사용될 수 있음. 이를 통해 코드를 더 간결하고 읽기 쉽게 만들 수 있으며, 특정 상황에 맞는 동작을 빠르게 구현할 수 있음.
 
@@ -36,58 +36,58 @@ mermaid: true
 ```csharp
 public class DelegateExample : Monobehavior
 {
-	class Player
-	{
-		private delegate void Buffdelegate(); // 타입 정의
+    class Player
+    {
+        private delegate void Buffdelegate(); // 타입 정의
 
-		private Buffdelegate _buffdelegate;   // 객체 (변수) 선언
+        private Buffdelegate _buffdelegate;   // 객체 (변수) 선언
 
-		public enum Buff
-		{
-			None,
-			Buff1,
-			Buff2,
-		}
+        public enum Buff
+        {
+            None,
+            Buff1,
+            Buff2,
+        }
 
-		private Buff _buff;
-		public Buff _Buff
-		{
-			get { return _buff; }
-			set 
-			{
-				if(_buff == value)
-					return;
-				
-				_buff = value;
-				if(_buff == Buff.Buff1)
-					_buffdelegate = Buff1;
-				if(_buff == Buff.Buff2)
-					_buffdelegate = Buff2;
-				if(_buff == Buff.None)
-					_buffdelegate = NoneBuff;
-			}
-		}
+        private Buff _buff;
+        public Buff _Buff
+        {
+            get { return _buff; }
+            set 
+            {
+                if(_buff == value)
+                    return;
+                
+                _buff = value;
+                if(_buff == Buff.Buff1)
+                    _buffdelegate = Buff1;
+                if(_buff == Buff.Buff2)
+                    _buffdelegate = Buff2;
+                if(_buff == Buff.None)
+                    _buffdelegate = NoneBuff;
+            }
+        }
 
-		public void Attack()
-		{
-			_buffdelegate.Invoke();
-			Debug.log("Attack");    // 적을 공격하는 코드
-		}
+        public void Attack()
+        {
+            _buffdelegate.Invoke();
+            Debug.log("Attack");    // 적을 공격하는 코드
+        }
 
-		void Buff1() { Debug.log("Buff1"); }  // 버프식 계산 함수 1
+        void Buff1() { Debug.log("Buff1"); }  // 버프식 계산 함수 1
 
-		void Buff2() { Debug.log("Buff2"); }  // 버프식 계산 함수 2
+        void Buff2() { Debug.log("Buff2"); }  // 버프식 계산 함수 2
 
-		void NoneBuff() {}  // 버프 없을 때
+        void NoneBuff() {}  // 버프 없을 때
 
-	}
+    }
 
-	void Start()
-	{
-		Player player = new Player();
-		player._Buff = Player.Buff.Buff1;
-		player.Attack();
-	}
+    void Start()
+    {
+        Player player = new Player();
+        player._Buff = Player.Buff.Buff1;
+        player.Attack();
+    }
 
 }
 ```

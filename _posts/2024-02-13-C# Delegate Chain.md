@@ -21,52 +21,52 @@ mermaid: true
 ```csharp
 public class DelegateTest : Monobehavior
 {
-	private delegate void TestDelegate();    // delegate 타입 정의
+    private delegate void TestDelegate();    // delegate 타입 정의
 
-	private TestDelegate testDelegate;    // delegate 변수 선언
+    private TestDelegate testDelegate;    // delegate 변수 선언
 
-	// 참조할 함수들
-	void Chain1() { Debug.log("Chain1"); }
-	void Chain2() { Debug.log("Chain2"); }
-	void Chain3() { Debug.log("Chain3"); }
+    // 참조할 함수들
+    void Chain1() { Debug.log("Chain1"); }
+    void Chain2() { Debug.log("Chain2"); }
+    void Chain3() { Debug.log("Chain3"); }
 
-	void Start() 
-	{
-		TestDelegate test1 = new TestDelegate(Chain1);
-		TestDelegate test2 = new TestDelegate(Chain2);
-		TestDelegate test3 = new TestDelegate(Chain3);
+    void Start() 
+    {
+        TestDelegate test1 = new TestDelegate(Chain1);
+        TestDelegate test2 = new TestDelegate(Chain2);
+        TestDelegate test3 = new TestDelegate(Chain3);
 
-		// 다음의 방법들은 모두 동일 기능
+        // 다음의 방법들은 모두 동일 기능
 
-		// 방법1
-		testDelegate = Delegate.Combine(test1, test2) as TestDelegate;
-		testDelegate = Delegate.Combine(testDelegate , test3) as TestDelegate;	
+        // 방법1
+        testDelegate = Delegate.Combine(test1, test2) as TestDelegate;
+        testDelegate = Delegate.Combine(testDelegate , test3) as TestDelegate;    
 
-		// 방법2
-		testDelegate = new TestDelegate(Chain1) 
-		+ new TestDelegate(Chain2) 
-		+ new TestDelegate(Chain3);
+        // 방법2
+        testDelegate = new TestDelegate(Chain1) 
+        + new TestDelegate(Chain2) 
+        + new TestDelegate(Chain3);
 
-		// 방법3
-		testDelegate = new TestDelegate(Chain1);
-		testDelegate += new TestDelegate(Chain2);
-		testDelegate += new TestDelegate(Chain3);
+        // 방법3
+        testDelegate = new TestDelegate(Chain1);
+        testDelegate += new TestDelegate(Chain2);
+        testDelegate += new TestDelegate(Chain3);
 
-		// 방법4
-		testDelegate = Chain1;
-		testDelegate += Chain2;
-		testDelegate += Chain3;
+        // 방법4
+        testDelegate = Chain1;
+        testDelegate += Chain2;
+        testDelegate += Chain3;
 
-		// 반대로 빼는 방법
-		testDelegate = Chain1;
-		testDelegate += Chain2;
-		testDelegate += Chain3;
+        // 반대로 빼는 방법
+        testDelegate = Chain1;
+        testDelegate += Chain2;
+        testDelegate += Chain3;
 
-		testDelegate -= Chain2;
-		testDelegate -= Chain3;
-		// 결과적으로 Chain1 함수 하나만 실행된다.
+        testDelegate -= Chain2;
+        testDelegate -= Chain3;
+        // 결과적으로 Chain1 함수 하나만 실행된다.
 
-		testDelegate .Invoke();
-	}
+        testDelegate .Invoke();
+    }
 }
 ```

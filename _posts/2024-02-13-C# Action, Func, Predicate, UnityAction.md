@@ -17,7 +17,7 @@ mermaid: true
 ```csharp
 namespace System
 { 
-	public delegate void Action(); 
+    public delegate void Action(); 
 }
 ```
 
@@ -57,11 +57,11 @@ public class NewBehaviourScript : MonoBehaviour
 ```csharp
 namespace System
 {
-  public delegate void Action<in T>(T obj);
-	public delegate void Action<in T1, in T2>(T1 arg1, T2 arg2, T3 arg3);
-	public delegate void Action<in T1, in T2, in T3>(T1 arg1, T2 arg2, T3 arg3);
-	...
-	public delegate void Action<in T1, in T2, ..., in T15>(T1 arg1, T2 arg2, ... , T15 arg15);
+    public delegate void Action<in T>(T obj);
+    public delegate void Action<in T1, in T2>(T1 arg1, T2 arg2, T3 arg3);
+    public delegate void Action<in T1, in T2, in T3>(T1 arg1, T2 arg2, T3 arg3);
+    ...
+    public delegate void Action<in T1, in T2, ..., in T15>(T1 arg1, T2 arg2, ... , T15 arg15);
 }
 ```
 
@@ -111,11 +111,11 @@ public class NewBehaviourScript : MonoBehaviour
 ```csharp
 namespace System
 {
-	public delegate TResult Func<out TResult>();
-	public delegate TResult Func<in T, out TResult>(T arg);
-	public delegate TResult Func<in T1, in T2, out TResult>(T1 arg1, T2 arg2);
-	...
-	public delegate TResult Func<in T1,in T2, ...,in T16,out TResult>(T1 arg1, T2 arg2, ..., T16 arg16);
+    public delegate TResult Func<out TResult>();
+    public delegate TResult Func<in T, out TResult>(T arg);
+    public delegate TResult Func<in T1, in T2, out TResult>(T1 arg1, T2 arg2);
+    ...
+    public delegate TResult Func<in T1,in T2, ...,in T16,out TResult>(T1 arg1, T2 arg2, ..., T16 arg16);
 }
 ```
 
@@ -161,14 +161,14 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
-	// 제네릭 타입의 갯수가 늘면서, 매개변수가 늘어난다.
+    // 제네릭 타입의 갯수가 늘면서, 매개변수가 늘어난다.
     private Func<int> func1;
     private Func<int, int> func2;
     private Func<int, int, int> func3;
 
     private void Start()
     {
-		// 람다식으로 간소화
+        // 람다식으로 간소화
         func1 = () => 1;
         func2 = (num1) => num1;
         func3 = (num1, num2) => num1 + num2;
@@ -235,9 +235,9 @@ namespace UnityEngine.Events
 ```csharp
 namespace UnityEngine.Events
 {
-	public delegate void UnityAction<T0>(T0 arg0);
-	public delegate void UnityAction<T0, T1>(T0 arg0, T1 arg1);
-	...
-	public delegate void UnityAction<T0, T1, T2, T3>(T0 arg0, T1 arg1, T2 arg2, T3 arg3);
+    public delegate void UnityAction<T0>(T0 arg0);
+    public delegate void UnityAction<T0, T1>(T0 arg0, T1 arg1);
+    ...
+    public delegate void UnityAction<T0, T1, T2, T3>(T0 arg0, T1 arg1, T2 arg2, T3 arg3);
 }
 ```
