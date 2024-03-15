@@ -222,22 +222,3 @@ namespace UnityEngine.Events
   public delegate void UnityAction();
 }
 ```
-
-## UnityAction<T>
-
-- `Unity Event System`에서 사용되는 `Delegate`
-- `using UnityEngine.Events;` 필요
-- `Generic` 매개변수는 최대 4개까지.
-- 주로 **`UnityEvent<T>`**와 함께 사용됨.
-
-### UnityAction<T>의 정의
-
-```csharp
-namespace UnityEngine.Events
-{
-    public delegate void UnityAction<T0>(T0 arg0);
-    public delegate void UnityAction<T0, T1>(T0 arg0, T1 arg1);
-    ...
-    public delegate void UnityAction<T0, T1, T2, T3>(T0 arg0, T1 arg1, T2 arg2, T3 arg3);
-}
-```
