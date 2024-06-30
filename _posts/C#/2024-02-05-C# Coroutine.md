@@ -1,8 +1,8 @@
 ---
 title:  Unity C# Coroutine
 date:   2024-02-05 +0900
-categories: [C# 문법]
-tags: [C# 문법]
+categories: [C#]
+tags: [C#]
 math: true
 mermaid: true
 ---
