@@ -1,7 +1,7 @@
 ---
 title:  Observer Pattern
 date:   2024-03-24 +1000
-categories: [디자인 패턴]
+categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
 tags: [디자인 패턴, Unity, C#]
 math: true
 mermaid: true
@@ -210,4 +210,4 @@ UnityEvents와 UnityActions를 고려할 때 성능 대 사용성을 저울질�
 옵저버 패턴은 모델 뷰 프레젠터(MVP) 아키텍처 패턴에 깊이 관련되어 있으며, 이는 다음 장에서 더 자세히 다룬다.
 
 ## 참고한 자료
-[유니티 E-Book](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)
+[Unity_E-Book_LevelUpYourCodeWithGameProgrammingPatterns](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)

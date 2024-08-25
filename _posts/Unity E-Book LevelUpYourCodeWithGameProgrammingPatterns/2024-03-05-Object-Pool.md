@@ -1,7 +1,7 @@
 ---
 title:  Object Pool
 date:   2024-03-05 +1100
-categories: [디자인 패턴]
+categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
 tags: [디자인 패턴, Unity, C#]
 math: true
 mermaid: true
@@ -240,4 +240,4 @@ public class RevisedProjectile : MonoBehaviour
 
 
 ## 참고한 자료
-[유니티 E-Book](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)
+[Unity_E-Book_LevelUpYourCodeWithGameProgrammingPatterns](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)

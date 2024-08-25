@@ -1,7 +1,7 @@
 ---
 title:  KISS 원칙과 SOLID 원칙
 date:   2024-02-29 +0900
-categories: [디자인 패턴]
+categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
 tags: [디자인 패턴, Unity, C#]
 math: true
 mermaid: true
@@ -614,4 +614,4 @@ SOLID의 다른 원칙들처럼, ***의존성 역전 원칙(Dependency Inversion
 
 
 ## 참고한 자료
-[유니티 E-Book](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)
+[Unity_E-Book_LevelUpYourCodeWithGameProgrammingPatterns](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)

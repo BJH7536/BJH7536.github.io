@@ -1,7 +1,7 @@
 ---
 title:  Command Pattern
 date:   2024-03-10 +1000
-categories: [디자인 패턴]
+categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
 tags: [디자인 패턴, Unity, C#]
 math: true
 mermaid: true
@@ -180,4 +180,4 @@ private void RunPlayerCommand(PlayerMover playerMover, Vector3 movement)
 `CommandInvoker`와 같은 외부 객체는 명령 객체의 내부 작동을 보지 않고, 단지 `Execute`나 `Undo`를 호출한다. 생성자를 호출할 때 명령 객체가 작동하는 데 필요한 모든 데이터를 제공하라.
 
 ## 참고한 자료
-[유니티 E-Book](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)
+[Unity_E-Book_LevelUpYourCodeWithGameProgrammingPatterns](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)

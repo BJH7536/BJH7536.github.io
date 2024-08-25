@@ -1,7 +1,7 @@
 ---
 title:  Model View Presenter and Conclusion
 date:   2024-03-31 +1000
-categories: [디자인 패턴]
+categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
 tags: [디자인 패턴, Unity, C#]
 math: true
 mermaid: true
@@ -303,4 +303,4 @@ Prefab을 생성하는 팩토리부터 AI를 위한 상태 패턴에 이르기�
 
 
 ## 참고한 자료
-[유니티 E-Book](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)
+[Unity_E-Book_LevelUpYourCodeWithGameProgrammingPatterns](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)

@@ -1,7 +1,7 @@
 ---
 title:  State Pattern
 date:   2024-03-24 +1000
-categories: [디자인 패턴]
+categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
 tags: [디자인 패턴, Unity, C#]
 math: true
 mermaid: true
@@ -265,4 +265,4 @@ Unity의 Animator 창을 사용해 본 적이 있다면, 그것의 작업 흐름
 여기 ***State Pattern***이 완전히 다른 맥락에서 다시 작동하는 모습이다. 모든 상태는 공격, 도주, 순찰과 같은 행동을 대표한다. 한 번에 하나의 상태만 활성화되며, 각 상태가 다음 상태로의 전환을 결정한다.
 
 ## 참고한 자료
-[유니티 E-Book](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)
+[Unity_E-Book_LevelUpYourCodeWithGameProgrammingPatterns](https://unity.com/kr/resources/level-up-your-code-with-game-programming-patterns)
