@@ -46,13 +46,13 @@ public class NewBehaviourScript : MonoBehaviour
 - `_action += Test1;` 에서 오류가 발생.
     - `Action`은 매개변수가 없는 `Delegate`이기 때문에, 매개변수를 받아 넘기는 것이 불가능.
 
-## Action<T>
+## Action&#60;T&#62;
 
 - `Generic Delegate`, 일반화 대리자
 - 매개변수를 사용할 수 있는 `Action`
 - `System` 내에 `Generic` 타입을 최대 15개까지 받을 수 있도록 `Action`들이 정의.
 
-### Action<T>의 정의
+### Action&#60;T&#62;의 정의
 
 ```csharp
 namespace System
@@ -186,14 +186,14 @@ public class NewBehaviourScript : MonoBehaviour
 
 ---
 
-## Predicate<T>
+## Predicate&#60;T&#62;
 
 - 반환값이 `bool`로 고정된 `Delegate`
 - 매개변수가 존재.
 - 특정 조건을 충족하는지 여부를 검사하는 데 사용됨.
 - 주로 컬렉션의 모든 요소에 대해 조건을 테스트하는데 사용됨.
 
-### Predicate<T>의 정의
+### Predicate&#60;T&#62;의 정의
 
 ```csharp
 namespace System
@@ -223,7 +223,7 @@ namespace UnityEngine.Events
 }
 ```
 
-### UnityAction<T>의 정의
+### UnityAction&#60;T&#62;의 정의
 
 ```csharp
 namespace UnityEngine.Events
