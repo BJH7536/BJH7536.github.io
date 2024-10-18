@@ -1,8 +1,8 @@
 ---
 title:  Command Pattern
 date:   2024-03-10 +1000
-categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
-tags: [디자인 패턴, Unity, C#]
+categories: [Unity E-book]
+tags: [디자인 패턴, Unity, C#, Unity E-book, LevelUpYourCodeWithGameProgrammingPatterns]
 math: true
 mermaid: true
 ---

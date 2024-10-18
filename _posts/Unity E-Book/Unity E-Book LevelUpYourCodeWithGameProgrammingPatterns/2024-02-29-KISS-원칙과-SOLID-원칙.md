@@ -1,8 +1,8 @@
 ---
 title:  KISS 원칙과 SOLID 원칙
 date:   2024-02-29 +0900
-categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
-tags: [디자인 패턴, Unity, C#]
+categories: [Unity E-book]
+tags: [디자인 패턴, Unity, C#, Unity E-book, LevelUpYourCodeWithGameProgrammingPatterns]
 math: true
 mermaid: true
 ---

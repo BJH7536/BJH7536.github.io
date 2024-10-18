@@ -1,8 +1,8 @@
 ---
 title:  Object Pool
 date:   2024-03-05 +1100
-categories: [Unity E-book LevelUpYourCodeWithGameProgrammingPatterns]
-tags: [디자인 패턴, Unity, C#]
+categories: [Unity E-book]
+tags: [디자인 패턴, Unity, C#, Unity E-book, LevelUpYourCodeWithGameProgrammingPatterns]
 math: true
 mermaid: true
 ---
