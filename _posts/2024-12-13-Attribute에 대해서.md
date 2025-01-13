@@ -41,6 +41,154 @@ C# 코드에 추가할 수 있는 메타 데이터
 
 Unity에서 비공개(private) 필드에 직렬화(Serialization)를 허용하여 Inspector View**에서 노출**하고 싶을 때 사용한다. 이에 대해서는 잘 알려주는 곳이 많으니 패스.
 
+## 그 밖에 유니티에서 자주 사용되는 Attribute들
+
+### [AddComponentMenu]
+
+- 이 스크립트를 GameObject에 컴포넌트로 추가할 때 메뉴에서 이 스크립트를 찾는 경로를 지정한다. *string 타입의 매개변수의 사용이 필수적이다.*
+- /로 디렉토리 계층을 만들 수 있다.
+- 이 매개변수의 값이 GameObject에 컴포넌트로 붙을 때의 이름에 영향을 미친다.
+    
+    ![image (9)](https://github.com/user-attachments/assets/6c795ef2-b1af-49cc-933a-56139ca2e540)
+    
+    이렇게 [AddComponentMenu] 를 작성해주면
+    
+    ![image (12)](https://github.com/user-attachments/assets/5a091b6a-4f0d-4161-818e-f95e36694d3a)
+    
+    ![image (13)](https://github.com/user-attachments/assets/5dace638-fb40-4211-88bc-df5b5ef98c06)
+    
+    지정한 경로를 통해 GameObject에 컴포넌트를 붙일 수 있다.
+    
+
+### [UnityEditor.MenuItem]
+
+- 유니티 에디터의 상단에 메뉴를 만들고, 해당 메뉴를 메서드와 연결한다. *string 타입의 매개변수의 사용이 필수적이다.*
+- static 메서드만 연결 가능하다.
+    
+    ![image (14)](https://github.com/user-attachments/assets/641b6b15-058b-454f-924e-c3de39afd840)
+    
+    위와 같이 작성해주면 
+    
+    ![image (15)](https://github.com/user-attachments/assets/1ba3d64c-ad5a-462f-a879-f702da2af8fd)
+    
+    이렇게 상단 메뉴에서 해당 메서드를 실행시킬 수 있다.
+    
+
+### [ContextMenu]
+
+- GameObject에 스크립트가 컴포넌트로 부착되어있을 때, InspectorView에서 해당 함수를 호출할 수 있는 방법을 제공한다. *string 타입의 매개변수의 사용이 필수적이다.*
+    
+    ![image (16)](https://github.com/user-attachments/assets/4c0fc717-45e2-43c4-a746-a1a71de0871f)
+    
+    위와 같이 작성하면
+    
+    ![image (17)](https://github.com/user-attachments/assets/2545492a-b9f5-4cf4-882f-40239f2c61ac)
+    
+    이렇게 InspectorView에서 해당 함수를 바로 실행시킬 수 있다.
+    
+
+### [ContextMenuItem()]
+
+- InspectorView에 드러나는 필드에서 바로 특정한 함수를 실행할 수 있도록 연결하는 Attribute
+- 필드의 바로 위에서 선언하며, 두 개의 string 매개변수를 필요로한다.
+    - 첫 번째 string으로 필드에서 함수를 연결할 이름을 지정하고
+    - 두 번째 string으로 연결할 함수의 이름을 지정한다.
+    
+    ![image (18)](https://github.com/user-attachments/assets/9cf13631-176b-4d8c-aa15-3e4edc3ecc0d)
+    
+    위와 같이 Value라는 필드에 ResetValue 함수와 RandomValue 함수를 연결했다.
+    
+    ![image (19)](https://github.com/user-attachments/assets/f6aa0df7-f770-4b68-baa0-21458a053a16)
+    
+    InspectorView에서 해당 필드에 마우스 커서를 올려놓고 우클릭하면 위와 같이 해당 함수를 실행시킬 수 있다.
+    
+
+### [Tooltip()]
+
+- InspectorView 에서 해당 필드에 마우스 커서를 올려놓으면 나타날 툴팁의 내용을 지정하는 Attribute
+- string 타입의 인자로 툴팁의 내용을 지정한다.
+    
+    ![image (20)](https://github.com/user-attachments/assets/1f713d66-746f-45b8-bd0c-8769d82a6843)
+    
+
+### [HelpURL()]
+
+![image (21)](https://github.com/user-attachments/assets/9d3084fa-9622-4f56-a63a-2bd5ca8c9012)
+
+- 스크립트가 컴포넌트로 부착되어있는 상태에서 물음표 버튼을 클릭해 특정한 웹페이지를 열어주는 Attribute
+- 해당 스크립트에 대한 설명이 있는 웹페이지를 연결해주는 용도로 사용할 수 있겠다.
+- string 타입의 인자에는 연결하고자 하는 웹페이지의 주소를 넣어주면 된다.
+
+### [ColorUsage()]
+
+- UnityEngine.Color 타입 필드가 InspectorView에 보일 때, Color의 alpha 값 사용 여부를 조절할 수 있는 Attribute.
+- 첫번째 인자로 false를 사용하면 Color 필드의 값을 에디터에서 조절할 때 Alpha 값을 나타나지 않는다.
+- 두번째 인자는 HDR 표시 여부를 나타낸다.
+    
+    ![image (22)](https://github.com/user-attachments/assets/3eca1e67-4925-4ae9-92f6-73f11e936f78)
+
+    위는 [ColorUsage(false, true)] 로 선언한 결과.
+    
+
+### [Header()]
+
+- InspectorView에 보이는 필드들을 묶는 데 사용되는 Attribute
+- Header는 Bold로 표시된다.
+    
+    ![image (23)](https://github.com/user-attachments/assets/586dba34-e7bb-4ba9-950f-b2c24b2fd1c9)
+
+### [Space()]
+
+- InspectorView에 보이는 요소들 사이의 수직 여백을 추가하는 Attribute
+- 인자로 int 값을 넣어 수직 여백의 길이를 조절할 수 있다.
+    
+    ![image (24)](https://github.com/user-attachments/assets/e4a92f6d-ff48-4a12-a936-78ec136d54cc)
+    
+    크기 20의 수직 여백을 넣은 모습 
+    
+
+### [MultiLine()]
+
+- InspectorView에 string 타입 필드의 입력칸을 위 아래로 늘리는 Attribute
+    
+    ![image (25)](https://github.com/user-attachments/assets/fef9060b-2e72-46ec-80f7-c9bbdd372c07)
+    
+    [Multiline(5)] 로 설정한 모습
+    
+
+### [TextArea()]
+
+- string 타입의 필드에 쓰인다.
+- 두 개의 int 타입 인자를 받는다. 각각 최소, 최대 열의 수를 의미한다.
+
+### [ExecuteInEditMode]
+
+- Play 모드에 진입하지 않고도 해당 스크립트가 동작하게 만드는 Attribute
+- 클래스의 선언 직전에 쓰인다.
+
+### [RequireComponent()]
+
+- 이 선언이 사용된 스크립트의 컴포넌트를 붙일 때, 여기서 지정한 컴포넌트가 함께 붙도록 만든다.
+- 클래스의 선언 직전에 쓰인다.
+- 예를 들어 RigidBody를 지정할 때는 `[RequireComponent(typeof(Rigidbody))]` 와 같이 지정하면 된다.
+- 스크립트의 동작에 반드시 필요한 다른 컴포넌트가 동일한 GameObject에 있는 것을 보장할 수 있는 Attribute.
+
+### [DisallowMultipleComponent]
+
+- 한 GameObject에 동일한 스크립트의 컴포넌트를 여러 개 붙이지 않도록 해주는 Attribute.
+- 클래스의 선언 직전에 쓰인다.
+
+### [System.NonSerialized]
+
+- 필드의 직렬화를 푸는 Attribute
+- 직렬화가 풀려, 해당 필드가 InspectorView에도 보이지 않게 된다.
+
+### [HideInInspector]
+
+- 필드가 InspectorView에서 보이지 않도록 감추는 Attribute.
+- 직렬화는 유지한다.
+
+
 ## 사용자 정의 Attribute
 
 ```csharp
