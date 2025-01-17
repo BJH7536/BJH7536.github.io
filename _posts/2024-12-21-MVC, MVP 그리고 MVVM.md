@@ -1,7 +1,7 @@
 ---
 title: MVC, MVP 그리고 MVVM
 date: 2024-12-21 +0900
-categories: [C#]
+categories: [디자인 패턴]
 tags: [C#, MVC, MVP, MVVM, 디자인 패턴, 아키텍처 패턴]
 math: true
 mermaid: true
