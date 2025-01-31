@@ -70,7 +70,7 @@ mermaid: true
 - MonoBehavior만 사용하는 것보다 팀 협업의 측면에서 더 많은 이점을 제공한다.
 
 
-> ⚠️**Destroying of ScriptableObjects**
+> ⚠️**Destroying of ScriptableObjects**  
 > 다른 UnityEnigne의 Object처럼, ScriptableObject는 **C++ 네이티브 부분**과 **C# 관리 부분**으로 구성된다. 
 > 네이티브 C++ 부분은 직접 제거할 수 있지만, C# 관리 부분은 **Garbage Collector**가 정리할 때까지 메모리에 남는다. 
 > **GC** 정리는 씬을 변경하거나 `Resources.UnloadUnusedAssets`를 호출할 때 발생한다.
@@ -89,12 +89,12 @@ MonoBehavior의 데이터를 ScriptableObject로 분리할 때, 데이터가 각
 ```csharp
 public class NPCHealthUnrefactored : MonoBehaviour
 {
-	public int maxHealth;
-	public int healthThreshold;
-	public NPCAIStateEnum gooldHealthAi;
-	public NPCAIStateEnum lowHealthAi;
+    public int maxHealth;
+    public int healthThreshold;
+    public NPCAIStateEnum gooldHealthAi;
+    public NPCAIStateEnum lowHealthAi;
 
-	public int currentHealth;
+    public int currentHealth;
 }
 ```
 
@@ -104,10 +104,10 @@ public class NPCHealthUnrefactored : MonoBehaviour
 [CreateAssetMenu(fileName="NPCConfig")] 
 public class NPCConfigSO : ScriptableObject 
 {    
-	public int maxHealth;
-	public int healthThreshold; 
-	public NPCAIStateEnum gooldHealthAi;
-	public NPCAIStateEnum lowHealthAi;
+    public int maxHealth;
+    public int healthThreshold; 
+    public NPCAIStateEnum gooldHealthAi;
+    public NPCAIStateEnum lowHealthAi;
 }
 ```
 
@@ -116,7 +116,7 @@ public class NPCConfigSO : ScriptableObject
 ```csharp
 public class NPCHealth: MonoBehaviour 
 {    
-		public NPCConfigSO config; 
+    public NPCConfigSO config; 
     public int currentHealth;
 }
 ```
@@ -190,18 +190,18 @@ public class NPCHealthEditor : Editor
 using System.IO; 
 public class LevelManager : MonoBehaviour 
 {    
-	public ScriptableObject levelLayout;    
-	
-	public void LoadLevelFromJson(string jsonFile)    
-	{ 
-		if (levelLayout == null) 
-		{ 
-			levelLayout = ScriptableObject.CreateInstance<LevelLayout>(); 
-		}    
-		
-		var importedFile = File.ReadAllText(jsonFile); 
-		JsonUtility.FromJsonOverwrite(importedFile, levelLayout);
-	}
+    public ScriptableObject levelLayout;    
+    
+    public void LoadLevelFromJson(string jsonFile)    
+    { 
+        if (levelLayout == null) 
+        { 
+            levelLayout = ScriptableObject.CreateInstance<LevelLayout>(); 
+        }    
+        
+        var importedFile = File.ReadAllText(jsonFile); 
+        JsonUtility.FromJsonOverwrite(importedFile, levelLayout);
+    }
 }
 ```
 
@@ -239,11 +239,11 @@ ScriptableObject이므로, 당연히 다음과 같이 어떠한 기능을 추가
 ```csharp
 public class GameItemSO : ScriptableObject 
 {    
-	public GameItemSO weakness;
-	public bool IsWinner(GameItemSO other)    
-	{ 
-		return other.weakness == this;    
-	}
+    public GameItemSO weakness;
+    public bool IsWinner(GameItemSO other)    
+    { 
+        return other.weakness == this;    
+    }
 }
 ```
 
@@ -253,16 +253,16 @@ public class GameItemSO : ScriptableObject
 ```csharp
 public class RockPaperScissorController : MonoBehaviour
 {
-	public GameItemSO MyGesture;
-	
-	private void JudgeWinner(GameItemSO opposite) {
-		if(MyGesture.IsWinner(opposite)) {
-			Debug.log("I Won!");
-		}
-		else {
-			Debug.log("I lost...");
-		}
-	}
+    public GameItemSO MyGesture;
+    
+    private void JudgeWinner(GameItemSO opposite) {
+        if(MyGesture.IsWinner(opposite)) {
+            Debug.log("I Won!");
+        }
+        else {
+            Debug.log("I lost...");
+        }
+    }
 }
 ```
 
@@ -320,12 +320,12 @@ ScriptableObject를 활용해 Observer Pattern을 구현한다면 다음과 같�
 [CreateAssetMenu(menuName = "Events/Void Event Channel")] 
 public class VoidEventChannelSO : ScriptableObject 
 {
-	public event UnityAction OnEventRaised;
-	public void RaiseEvent() 
-	{ 
-		if (OnEventRaised != null) 
-			OnEventRaised.Invoke(); 
-	} 
+    public event UnityAction OnEventRaised;
+    public void RaiseEvent() 
+    { 
+        if (OnEventRaised != null) 
+            OnEventRaised.Invoke(); 
+    } 
 }
 ```
 
@@ -382,20 +382,20 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "GameObject Runtime Set", fileName = "GORuntimeSet")] 
 public class GameObjectRuntimeSetSO : ScriptableObject 
 {    
-	private List<GameObject> items = new List<GameObject>();    
-	public List<GameObject> Items => items; 
-	   
-	public void Add(GameObject thingToAdd)    
-	{ 
-		if (!items.Contains(thingToAdd)) 
-			items.Add(thingToAdd);    
-	} 
+    private List<GameObject> items = new List<GameObject>();    
+    public List<GameObject> Items => items; 
+       
+    public void Add(GameObject thingToAdd)    
+    { 
+        if (!items.Contains(thingToAdd)) 
+            items.Add(thingToAdd);    
+    } 
 
-	public void Remove(GameObject thingToRemove)    
-	{ 
-		if (items.Contains(thingToRemove)) 
-			items.Remove(thingToRemove);    
-	}
+    public void Remove(GameObject thingToRemove)    
+    { 
+        if (items.Contains(thingToRemove)) 
+            items.Remove(thingToRemove);    
+    }
 }
 ```
 
@@ -410,18 +410,18 @@ ScriptableObject이 추적하는 대상에 대한 참조를 가지고 있으므�
 ```csharp
 public abstract class RuntimeSetSO<T> : ScriptableObject    
 { 
-	[HideInInspector] public List<T> Items = new List<T>(); 
-	public void Add(T thing) 
-	{ 
-		if (!Items.Contains(thing)) 
-			Items.Add(thing); 
-	} 
-	
-	public void Remove(T thing) 
-	{ 
-		if (Items.Contains(thing)) 
-			Items.Remove(thing); 
-	}    
+    [HideInInspector] public List<T> Items = new List<T>(); 
+    public void Add(T thing) 
+    { 
+        if (!Items.Contains(thing)) 
+            Items.Add(thing); 
+    } 
+    
+    public void Remove(T thing) 
+    { 
+        if (Items.Contains(thing)) 
+            Items.Remove(thing); 
+    }    
 }
 ```
 
