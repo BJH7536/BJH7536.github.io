@@ -1,13 +1,3 @@
 User-agent: *
-Allow: /
-
-User-agent: Googlebot
 Disallow:
-
-User-agent: AdsBot-Google
-Disallow:
-
-User-agent: Googlebot-Image
-Disallow:
-
 Sitemap: https://bjh7536.github.io/sitemap.xml
