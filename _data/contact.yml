@@ -10,6 +10,10 @@
   icon: "fas fa-envelope"
   noblank: true # open link in current tab
 
+- type: youtube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/@BJH7536"
+  
 #- type: rss
 #  icon: "fas fa-rss"
 #  noblank: true
